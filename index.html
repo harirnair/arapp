@@ -29,6 +29,29 @@
         color: white;
       }
     </style>
+    <style>
+      #footer {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color:white;
+        font-size:3em;
+      }
+    </style>
+    <script>
+      addEventListener('markerFound', function(){
+      document.querySelector("#footer").innerHTML = 'marker found' ;
+      });
+      addEventListener('markerLost',function(){
+      document.querySelector("#footer").innerHTML='marker lost';
+      });
+  </script>
+    
   </head>
 
   <body style="margin : 0px; overflow: hidden;">
@@ -36,6 +59,8 @@
     <div class="arjs-loader">
       <div>Loading, please wait...</div>
     </div>
+    
+    <div id="footer"></div>
 
     <!-- a-frame scene -->
     <a-scene
